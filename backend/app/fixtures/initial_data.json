@@ -1,0 +1,350 @@
+[
+    {
+        "model": "app.customuser",
+        "pk": 1,
+        "fields": {
+            "username": "adminuser",
+            "email": "admin@example.com",
+            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "role": "ADMIN",
+            "preferences": "Hobbys: Lesen, Reisen, Programmieren.\nVorlieben: Organisation, Teamarbeit, Effizienzsteigerung."
+        }
+    },
+    {
+        "model": "app.customuser",
+        "pk": 2,
+        "fields": {
+            "username": "premiumuser1",
+            "email": "premium1@example.com",
+            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "role": "PREMIUM",
+            "preferences": "Hobbys: Tüfteln, Mechanik, Modellbau.\nVorlieben: Präzision, technische Herausforderungen, innovative Lösungen."
+        }
+    },
+    {
+        "model": "app.customuser",
+        "pk": 3,
+        "fields": {
+            "username": "basicuser1",
+            "email": "basic1@example.com",
+            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "role": "BASIC",
+            "preferences": "Hobbys: Gartenarbeit, Wandern, Kochen.\nVorlieben: Natur, nachhaltige Praktiken, einfache Lösungen."
+        }
+    },
+
+    {
+        "model": "app.image",
+        "pk": 1,
+        "fields": {
+            "uploaded_by": 1,
+            "image_file": "images/admin_image1.jpg",
+            "uploaded_at": "2024-04-27T12:00:00Z"
+        }
+    },
+    {
+        "model": "app.image",
+        "pk": 2,
+        "fields": {
+            "uploaded_by": 1,
+            "image_file": "images/admin_image2.jpg",
+            "uploaded_at": "2024-04-28T14:30:00Z"
+        }
+    },
+    {
+        "model": "app.image",
+        "pk": 3,
+        "fields": {
+            "uploaded_by": 2,
+            "image_file": "images/premium1_image1.jpg",
+            "uploaded_at": "2024-04-29T09:15:00Z"
+        }
+    },
+    {
+        "model": "app.image",
+        "pk": 4,
+        "fields": {
+            "uploaded_by": 2,
+            "image_file": "images/premium1_image2.jpg",
+            "uploaded_at": "2024-04-30T11:45:00Z"
+        }
+    },
+    {
+        "model": "app.image",
+        "pk": 5,
+        "fields": {
+            "uploaded_by": 3,
+            "image_file": "images/basic1_image1.jpg",
+            "uploaded_at": "2024-05-01T08:20:00Z"
+        }
+    },
+    {
+        "model": "app.image",
+        "pk": 6,
+        "fields": {
+            "uploaded_by": 3,
+            "image_file": "images/basic1_image2.jpg",
+            "uploaded_at": "2024-05-02T10:50:00Z"
+        }
+    },
+
+    {
+        "model": "app.analysisresult",
+        "pk": 1,
+        "fields": {
+            "image": 1,
+            "environment": "Büro",
+            "objects_detected": {
+                "objects": [
+                    "Schreibtisch",
+                    "Computer",
+                    "Stuhl",
+                    "Monitor",
+                    "Tastatur",
+                    "Maus",
+                    "Lampe",
+                    "Regal",
+                    "Papierkorb",
+                    "Bücher"
+                ]
+            },
+            "analyzed_at": "2024-04-27T12:30:00Z"
+        }
+    },
+    {
+        "model": "app.analysisresult",
+        "pk": 2,
+        "fields": {
+            "image": 2,
+            "environment": "Konferenzraum",
+            "objects_detected": {
+                "objects": [
+                    "Tisch",
+                    "Projektor",
+                    "Stühle",
+                    "Whiteboard",
+                    "Kaffeemaschine",
+                    "Uhren",
+                    "Lampen",
+                    "Vorhänge",
+                    "Bilder",
+                    "Pflanzen"
+                ]
+            },
+            "analyzed_at": "2024-04-28T15:00:00Z"
+        }
+    },
+    {
+        "model": "app.analysisresult",
+        "pk": 3,
+        "fields": {
+            "image": 3,
+            "environment": "Werkstatt",
+            "objects_detected": {
+                "objects": [
+                    "Werkbank",
+                    "Werkzeuge",
+                    "Maschine",
+                    "Schraubenzieher",
+                    "Hammer",
+                    "Bohrmaschine",
+                    "Schrauben",
+                    "Nagel",
+                    "Ölkanister",
+                    "Leitern"
+                ]
+            },
+            "analyzed_at": "2024-04-29T09:45:00Z"
+        }
+    },
+    {
+        "model": "app.analysisresult",
+        "pk": 4,
+        "fields": {
+            "image": 4,
+            "environment": "Lagerraum",
+            "objects_detected": {
+                "objects": [
+                    "Regale",
+                    "Kisten",
+                    "Geräte",
+                    "Werkzeuge",
+                    "Kartons",
+                    "Stangen",
+                    "Schrauben",
+                    "Leiter",
+                    "Mülltonnen",
+                    "Bühnenbeleuchtung"
+                ]
+            },
+            "analyzed_at": "2024-04-30T12:15:00Z"
+        }
+    },
+    {
+        "model": "app.analysisresult",
+        "pk": 5,
+        "fields": {
+            "image": 5,
+            "environment": "Garten",
+            "objects_detected": {
+                "objects": [
+                    "Blumen",
+                    "Gartenwerkzeuge",
+                    "Beete",
+                    "Bäume",
+                    "Sträucher",
+                    "Wasserhahn",
+                    "Tische",
+                    "Gartenstühle",
+                    "Gießkanne",
+                    "Gartenschlauch"
+                ]
+            },
+            "analyzed_at": "2024-05-01T08:50:00Z"
+        }
+    },
+    {
+        "model": "app.analysisresult",
+        "pk": 6,
+        "fields": {
+            "image": 6,
+            "environment": "Feld",
+            "objects_detected": {
+                "objects": [
+                    "Pflanzen",
+                    "Traktor",
+                    "Zäune",
+                    "Bäume",
+                    "Straßenlaternen",
+                    "Scheunen",
+                    "Bewässerungssystem",
+                    "Futtertröge",
+                    "Landwirtschaftsmaschinen",
+                    "Wege"
+                ]
+            },
+            "analyzed_at": "2024-05-02T11:20:00Z"
+        }
+    },
+
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 1,
+        "fields": {
+            "analysis_result": 1,
+            "suggestion_markdown": "Optimieren Sie die Schreibtischanordnung für bessere Effizienz:\n\n- **Schreibtisch und Computer:** Platzieren Sie den Computer so, dass der Bildschirm direkt vor Ihnen ist.\n- **Stuhl:** Verwenden Sie einen ergonomischen Stuhl für besseren Komfort.\n- **Beleuchtung:** Installieren Sie eine Schreibtischlampe, um die Arbeitsfläche optimal zu beleuchten.",
+            "alternative_markdown": "Ergänzen Sie zusätzliche Stauraum für Büromaterialien:\n\n- **Regale:** Fügen Sie Regale über dem Schreibtisch hinzu.\n- **Schubladen:** Nutzen Sie Schubladen für persönliche Gegenstände.",
+            "created_at": "2024-04-27T13:00:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 2,
+        "fields": {
+            "analysis_result": 1,
+            "suggestion_markdown": "Integrieren Sie Kabelmanagement-Systeme, um Unordnung zu vermeiden:\n\n- **Kabelkanäle:** Verwenden Sie Kabelkanäle unter dem Schreibtisch.\n- **Kabelbinder:** Nutzen Sie Kabelbinder für überschüssige Kabel.",
+            "alternative_markdown": "Ergänzen Sie zusätzliche Stauraum für Büromaterialien:\n\n- **Kübel:** Nutzen Sie Kübel für häufig verwendete Materialien.\n- **Organizer:** Verwenden Sie Schreibtischorganizer für kleinere Gegenstände.",
+            "created_at": "2024-04-27T13:15:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 3,
+        "fields": {
+            "analysis_result": 2,
+            "suggestion_markdown": "Verbessern Sie die Beleuchtung im Konferenzraum für bessere Sichtbarkeit.\n\n**Vorschläge:**\n\n- **LED-Leuchten:** Installieren Sie energieeffiziente LED-Leuchten.\n- **Dimmbare Lichter:** Nutzen Sie dimmbare Lichter für flexible Beleuchtung.",
+            "alternative_markdown": "Fügen Sie akustische Paneele hinzu, um die Tonqualität zu verbessern:\n\n- **Paneeltypen:** Verwenden Sie Schaumstoffpaneele oder Stoffpaneele.\n- **Platzierung:** Platzieren Sie Paneele an den Wänden und der Decke.",
+            "created_at": "2024-04-28T15:30:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 4,
+        "fields": {
+            "analysis_result": 2,
+            "suggestion_markdown": "Ergänzen Sie mobile Projektoren für flexiblere Präsentationen.\n\n**Details:**\n\n1. **Portabilität:** Wählen Sie leichte und kompakte Modelle.\n2. **Anschlüsse:** Achten Sie auf verschiedene Anschlussmöglichkeiten (HDMI, USB).",
+            "alternative_markdown": "Installieren Sie zusätzliche Steckdosen für Geräte:\n\n- **Steckdosenleisten:** Nutzen Sie Steckdosenleisten mit Überspannungsschutz.\n- **Positionierung:** Platzieren Sie Steckdosen strategisch rund um den Konferenztisch.",
+            "created_at": "2024-04-28T15:45:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 5,
+        "fields": {
+            "analysis_result": 3,
+            "suggestion_markdown": "Organisieren Sie Werkzeuge nach Nutzungshäufigkeit:\n\n- **Häufig genutzte Werkzeuge:** Platzieren Sie diese in leicht zugänglichen Bereichen.\n- **Selten genutzte Werkzeuge:** Lagern Sie diese in höheren Regalen oder geschlossenen Schränken.",
+            "alternative_markdown": "Fügen Sie zusätzliche Ablageflächen für größere Maschinen hinzu:\n\n- **Regalsysteme:** Installieren Sie robuste Regale, die das Gewicht tragen können.\n- **Freie Flächen:** Nutzen Sie freie Wände für zusätzliche Aufbewahrung.",
+            "created_at": "2024-04-29T10:00:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 6,
+        "fields": {
+            "analysis_result": 3,
+            "suggestion_markdown": "Installieren Sie bessere Beleuchtung für präzisere Arbeit:\n\n- **Arbeitsleuchten:** Nutzen Sie gerichtete Arbeitsleuchten über den Arbeitsbereichen.\n- **Bewegungssensoren:** Installieren Sie Lichter, die bei Bewegung aktiviert werden.",
+            "alternative_markdown": "Verwenden Sie farblich codierte Lagerungssysteme:\n\n- **Farbmarkierungen:** Kennzeichnen Sie Regale und Behälter mit verschiedenen Farben.\n- **Legenden:** Erstellen Sie eine Legende zur schnellen Identifikation der Inhalte.",
+            "created_at": "2024-04-29T10:15:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 7,
+        "fields": {
+            "analysis_result": 4,
+            "suggestion_markdown": "Optimieren Sie die Regalanordnung für effizienteren Zugriff:\n\n- **Höhe anpassen:** Passen Sie die Regalhöhe an die häufigsten Gegenstände an.\n- **Labeling:** Beschriften Sie Regale klar und deutlich.",
+            "alternative_markdown": "Fügen Sie Rollwagen hinzu, um den Transport von Geräten zu erleichtern:\n\n- **Tragfähigkeit:** Wählen Sie Rollwagen mit ausreichender Tragfähigkeit.\n- **Mobilität:** Achten Sie auf leichtgängige Räder für einfaches Bewegen.",
+            "created_at": "2024-04-30T12:30:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 8,
+        "fields": {
+            "analysis_result": 4,
+            "suggestion_markdown": "Verbessern Sie die Beschriftung der Regale für bessere Übersicht:\n\n- **Klare Schriftarten:** Nutzen Sie gut lesbare Schriftarten.\n- **Farbcodierung:** Verwenden Sie Farben zur schnellen Identifikation.",
+            "alternative_markdown": "Nutzen Sie transparente Kisten für eine einfachere Identifikation:\n\n- **Material:** Wählen Sie stabile und transparente Materialien.\n- **Größen:** Verwenden Sie verschiedene Größen für unterschiedliche Gegenstände.",
+            "created_at": "2024-04-30T12:45:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 9,
+        "fields": {
+            "analysis_result": 5,
+            "suggestion_markdown": "Fügen Sie automatische Bewässerungssysteme hinzu:\n\n- **Tropfbewässerung:** Effizient und wassersparend.\n- **Zeitschaltuhren:** Automatisieren Sie die Bewässerungszeiten.",
+            "alternative_markdown": "Nutzen Sie Mulch, um die Bodenfeuchtigkeit zu erhalten:\n\n- **Materialien:** Organischer Mulch wie Rindenmulch oder Stroh.\n- **Schichtdicke:** Eine Schicht von 5-10 cm ist optimal.",
+            "created_at": "2024-05-01T09:00:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 10,
+        "fields": {
+            "analysis_result": 5,
+            "suggestion_markdown": "Pflanzen Sie widerstandsfähigere Sorten für bessere Erträge:\n\n- **Sortenauswahl:** Wählen Sie Sorten, die gegen lokale Schädlinge resistent sind.\n- **Pflege:** Optimieren Sie die Pflege für spezifische Sorten.",
+            "alternative_markdown": "Integrieren Sie Kompostierungssysteme zur Verbesserung der Bodengesundheit:\n\n- **Kompostbehälter:** Installieren Sie mehrere Behälter für verschiedene Materialien.\n- **Pflege:** Regelmäßiges Umsetzen und Bewässern zur Beschleunigung des Kompostierungsprozesses.",
+            "created_at": "2024-05-01T09:15:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 11,
+        "fields": {
+            "analysis_result": 6,
+            "suggestion_markdown": "Installieren Sie Zäune zur besseren Absicherung des Feldes:\n\n- **Material:** Verwenden Sie robuste Materialien wie Metall oder PVC.\n- **Höhe:** Wählen Sie eine Höhe, die das Eindringen von Tieren verhindert.",
+            "alternative_markdown": "Nutzen Sie Bewässerungssysteme für gleichmäßige Pflanzenentwicklung:\n\n- **Systemtypen:** Sprinkleranlagen oder Tropfbewässerung.\n- **Automatisierung:** Integrieren Sie Sensoren zur automatischen Steuerung.",
+            "created_at": "2024-05-02T11:30:00Z"
+        }
+    },
+    {
+        "model": "app.improvementsuggestion",
+        "pk": 12,
+        "fields": {
+            "analysis_result": 6,
+            "suggestion_markdown": "Setzen Sie Traktoren mit effizienteren Motoren ein:\n\n- **Kraftstoffeffizienz:** Wählen Sie Modelle mit niedrigem Kraftstoffverbrauch.\n- **Emissionen:** Bevorzugen Sie Traktoren mit reduzierten Emissionen.",
+            "alternative_markdown": "Implementieren Sie Fruchtwechsel zur Bodenverbesserung:\n\n- **Planung:** Entwickeln Sie einen Rotationsplan für verschiedene Pflanzen.\n- **Diversität:** Bauen Sie verschiedene Pflanzensorten an, um die Bodengesundheit zu fördern.",
+            "created_at": "2024-05-02T11:45:00Z"
+        }
+    }
+]

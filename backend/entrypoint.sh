@@ -12,6 +12,12 @@ echo "Datenbank ist bereit!"
 # Migrationen ausführen
 python manage.py migrate
 
+# DB leeren
+python manage.py flush --no-input
+
+# Testdaten laden
+python manage.py loaddata initial_data.json
+
 # Statischen Dateien sammeln (optional)
 # python manage.py collectstatic --noinput
 
