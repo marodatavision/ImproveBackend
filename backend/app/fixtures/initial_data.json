@@ -5,9 +5,11 @@
         "fields": {
             "username": "adminuser",
             "email": "admin@example.com",
-            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "password": "pbkdf2_sha256$870000$Nh1xtbibQtwXyqWKV2hpV0$kk94pocXcAWPO4OKSNn76af3sfAMW6BKHOMB4nQjlWE=",
             "role": "ADMIN",
-            "preferences": "Hobbys: Lesen, Reisen, Programmieren.\nVorlieben: Organisation, Teamarbeit, Effizienzsteigerung."
+            "preferences": "Hobbys: Lesen, Reisen, Programmieren.\nVorlieben: Organisation, Teamarbeit, Effizienzsteigerung.",
+            "is_active": true,
+            "is_staff": true
         }
     },
     {
@@ -16,9 +18,11 @@
         "fields": {
             "username": "premiumuser1",
             "email": "premium1@example.com",
-            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "password": "pbkdf2_sha256$870000$Nh1xtbibQtwXyqWKV2hpV0$kk94pocXcAWPO4OKSNn76af3sfAMW6BKHOMB4nQjlWE=",
             "role": "PREMIUM",
-            "preferences": "Hobbys: Tüfteln, Mechanik, Modellbau.\nVorlieben: Präzision, technische Herausforderungen, innovative Lösungen."
+            "preferences": "Hobbys: Tüfteln, Mechanik, Modellbau.\nVorlieben: Präzision, technische Herausforderungen, innovative Lösungen.",
+            "is_active": true,
+            "is_staff": true
         }
     },
     {
@@ -27,9 +31,11 @@
         "fields": {
             "username": "basicuser1",
             "email": "basic1@example.com",
-            "password": "pbkdf2_sha256$260000$9Z2oU3KYZ5xd$fqY4prHnXB1cGLufGFfhO49YdqwqeNvefEcRqe9uQlk=",
+            "password": "pbkdf2_sha256$870000$Nh1xtbibQtwXyqWKV2hpV0$kk94pocXcAWPO4OKSNn76af3sfAMW6BKHOMB4nQjlWE=",
             "role": "BASIC",
-            "preferences": "Hobbys: Gartenarbeit, Wandern, Kochen.\nVorlieben: Natur, nachhaltige Praktiken, einfache Lösungen."
+            "preferences": "Hobbys: Gartenarbeit, Wandern, Kochen.\nVorlieben: Natur, nachhaltige Praktiken, einfache Lösungen.",
+            "is_active": true,
+            "is_staff": true
         }
     },
 
