@@ -9,10 +9,10 @@ from .views import (
 
 
 router = routers.DefaultRouter()
-router.register(r'users', CustomUserViewSet)
-router.register(r'images', ImageViewSet)
-router.register(r'analysis-results', AnalysisResultViewSet)
-router.register(r'improvement-suggestions', ImprovementSuggestionViewSet)
+router.register(r'users', CustomUserViewSet, basename='user')
+router.register(r'images', ImageViewSet, basename='image')
+router.register(r'analysis-results', AnalysisResultViewSet, basename='analysisresult')
+router.register(r'improvement-suggestions', ImprovementSuggestionViewSet, basename='improvementsuggestion')
 
 urlpatterns = [
     path('', include(router.urls)),
