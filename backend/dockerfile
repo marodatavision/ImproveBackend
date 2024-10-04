@@ -1,7 +1,7 @@
 # backend/Dockerfile
 FROM python:3.11-slim
 
-RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y netcat-openbsd && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -13,13 +13,14 @@ COPY . /app/
 
 # Entrypoint-Skript hinzufügen
 COPY entrypoint.sh /entrypoint.sh
+RUN dos2unix /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Port freigeben (optional)
 EXPOSE 8000
 
 # Entrypoint festlegen
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
 
 # Standardbefehl zum Starten des Servers
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
