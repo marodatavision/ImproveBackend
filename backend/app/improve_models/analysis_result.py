@@ -2,7 +2,7 @@ from django.db import models
 
 
 class AnalysisResult(models.Model):
-    image = models.OneToOneField('Image', on_delete=models.CASCADE)
+    image = models.OneToOneField('Image', on_delete=models.CASCADE, related_name='analysis_result')
     environment = models.CharField(max_length=100)
     objects_detected = models.JSONField()
     analyzed_at = models.DateTimeField(auto_now_add=True)
