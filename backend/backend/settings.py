@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j3&qngq^wl%k--77j1*bi**4z-w!fpmc_ln0aivihc3zm95q&='
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,9 +162,39 @@ REST_FRAMEWORK = {
 
 # Emailing
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_PORT = 2525
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '6da3e5007266ed'
-EMAIL_HOST_PASSWORD = 'ccefb6620fd9fb'
-DEFAULT_FROM_EMAIL = 'Improve <noreply@improve-app.com>'
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'sandbox.smtp.mailtrap.io')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'username')      # Ersetze mit deinem Mailtrap-Benutzernamen
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'password')   # Ersetze mit deinem Mailtrap-Passwort
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 2525))                                 # Mailtrap unterstützt auch 587 und 465
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'                              # Oder EMAIL_USE_SSL = True, je nach Port
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@improve.com')
+
+# Logging für E-Mail-Fehler
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django.core.mail': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'django_rest_passwordreset': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
+# Frontend-URL (für den Reset-Link in der E-Mail)
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')

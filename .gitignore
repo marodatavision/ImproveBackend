@@ -1,1 +1,6 @@
 improve/
+*.env
+
+# Django
+*.pyc
+__pycache__/

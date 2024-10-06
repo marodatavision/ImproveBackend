@@ -1,2 +1,3 @@
 from rest_framework import serializers
 from .improve_serializers import CustomUserSerializer, ImprovementSuggestionSerializer, ImageSerializer, AnalysisResultSerializer
+from django_rest_passwordreset.serializers import PasswordResetSerializer, PasswordResetConfirmSerializer
