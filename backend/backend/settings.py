@@ -202,3 +202,6 @@ LOGGING = {
 
 # Frontend-URL (für den Reset-Link in der E-Mail)
 FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')
+
+# OpenAI API 
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
