@@ -20,7 +20,8 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
     """
     try:
         # Erstelle die UID des Benutzers
-        uid = urlsafe_base64_encode(force_bytes(reset_password_token.user.pk))
+        #uid = urlsafe_base64_encode(force_bytes(reset_password_token.user.id))
+        uid = reset_password_token.user.id
         
         # Erstelle den Reset-Link, der auf dein Frontend verweist
         reset_url = f"{settings.FRONTEND_URL}/password_reset_confirm/?uid={uid}&token={reset_password_token.key}"
