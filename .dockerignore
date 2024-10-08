@@ -1,0 +1,9 @@
+# flyctl launch added from .gitignore
+**\improve
+**\*.env
+media\*
+
+# Django
+**\*.pyc
+**\__pycache__
+fly.toml
