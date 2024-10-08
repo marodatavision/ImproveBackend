@@ -10,7 +10,7 @@ COPY requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app/
+COPY backend/. /app/
 
 # Entrypoint-Skript hinzufügen
 COPY entrypoint.sh /entrypoint.sh
@@ -18,10 +18,10 @@ RUN dos2unix /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Port freigeben (optional)
-EXPOSE 8000
+EXPOSE 8080
 
 # Entrypoint festlegen
 ENTRYPOINT ["sh", "/entrypoint.sh"]
 
 # Standardbefehl zum Starten des Servers
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "backend.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "backend.wsgi"]

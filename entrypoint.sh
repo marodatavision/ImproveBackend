@@ -10,7 +10,7 @@
 # echo "Datenbank ist bereit!"
 
 # Migrationen ausführen
-python manage.py migrate
+# python manage.py migrate
 
 # DB leeren 
 # python manage.py flush --no-input # for dev

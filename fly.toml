@@ -7,7 +7,7 @@ app = 'improvebackend'
 primary_region = 'arn'
 
 [build]
-  dockerfile = "backend/Dockerfile"
+  dockerfile = "Dockerfile"
   ignorefile = ".dockerignore"
 
 [http_service]
