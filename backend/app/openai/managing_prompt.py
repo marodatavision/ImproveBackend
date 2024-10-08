@@ -3,7 +3,8 @@ def create_personalized_prompt(image_path, user, language="german"):
     Analyze the image located at {image_path}. 
     Try to detect all objects in the image in the best precision and finest granularity and remember the objects with their possibilities as objects_detected. 
     Based on the analysis of the environment and objects in the image, 
-    provide detailed improvement suggestions and alternative. Personalize the suggestions and alternative based on the user's preferences and profile.
+    provide detailed improvement suggestions and alternative. 
+    Personalize the suggestions and alternative based on the user's preferences and profile and embed them into markdown code.
 
     User Profile:
     - Preferences: {user.preferences}
@@ -14,7 +15,7 @@ def create_personalized_prompt(image_path, user, language="german"):
 
     The output should fit into the following python class via Structured Outputs. 
     Make sure you have a corresponding value for all attributes. 
-    Also make sure you put a comma-separated list of objects as strin in objects_detected.
+    Also make sure you put a comma-separated list of objects as string in objects_detected.
     Translate the whole output to the {language} language:
 
     class ImproveResult(BaseModel):
