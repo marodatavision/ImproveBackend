@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
     'localhost',
     os.getenv('ALLOWED_HOST', 'localhost')
 ]
-CSRF_TRUSTED_ORIGINS = ['https://improvebackend.fly.dev']
+CSRF_TRUSTED_ORIGINS = ['https://improvebackend.fly.dev', 'http://localhost']
 
 
 # Application definition
@@ -151,6 +151,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:8080",
     "https://improvefrontend.fly.dev",
     "https://improvebackend.fly.dev",
     # Fügen Sie weitere Domains hinzu, wenn nötig
