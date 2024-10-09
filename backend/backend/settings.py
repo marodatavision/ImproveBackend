@@ -31,7 +31,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    os.getenv('ALLOWED_HOST', 'localhost')
+]
+CSRF_TRUSTED_ORIGINS = ['https://improvebackend.fly.dev']
 
 
 # Application definition
@@ -125,7 +129,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = "/var/www/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -147,6 +152,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://improvefrontend.fly.dev",
+    "https://improvebackend.fly.dev",
     # Fügen Sie weitere Domains hinzu, wenn nötig
 ]
 

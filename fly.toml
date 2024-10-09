@@ -6,6 +6,9 @@
 app = 'improvebackend'
 primary_region = 'arn'
 
+[deploy]
+  release_command = "python manage.py collectstatic"
+
 [build]
   dockerfile = "Dockerfile"
   ignorefile = ".dockerignore"
