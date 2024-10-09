@@ -1,5 +1,4 @@
 from django.urls import path, include
-from django.views.generic import TemplateView
 from rest_framework import routers
 from .views import (
     CustomUserViewSet,
@@ -23,5 +22,4 @@ urlpatterns = [
     path('', include(router.urls)),
     path('password_reset/', reset_password_request_token, name='password_reset'),
     path('password_reset_confirm/', reset_password_confirm, name='password_reset_confirm'),
-    path('', TemplateView.as_view(template_name='landing.html'), name='landing'),
 ]

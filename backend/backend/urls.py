@@ -40,6 +40,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('app/', include('app.frontend_urls')), # frontend Routen
     path('api/', include('app.urls')),  # API-Routen
     path('api-auth/', include('rest_framework.urls')),  # DRF-Login-Ansicht
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

@@ -16,6 +16,7 @@ COPY backend/. /app/
 #COPY entrypoint.sh /entrypoint.sh
 #RUN dos2unix /entrypoint.sh
 #RUN chmod +x /entrypoint.sh
+RUN python manage.py collectstatic
 
 # Port freigeben (optional)
 EXPOSE 8080
