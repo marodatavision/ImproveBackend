@@ -14,12 +14,16 @@ from pathlib import Path
 import os
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Medien-Einstellungen
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+LOGIN_URL = '/app/login'
+LOGIN_REDIRECT_URL = '/app/home/'
+LOGOUT_REDIRECT_URL = '/app/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -88,11 +92,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL', f"postgres://postgres:{os.getenv('POSTGRES_PASSWORD')}@localhost:5432/improve-db"))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DB_NAME', 'improve-db'),  # Name der Datenbank
+        'USER': os.getenv('POSTGRES_USER', 'postgres'),  # Dein Benutzername für PostgreSQL
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'quhgu1-ricfij-wofdyX'),  # Dein Passwort für PostgreSQL
+        'HOST': 'host.docker.internal',  # Verbindung zur lokalen Datenbank
+        'POSTGRES_PORT': os.getenv('POSTGRES_PORT', 5432)
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

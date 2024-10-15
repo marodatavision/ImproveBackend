@@ -25,6 +25,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf import settings
 from django.conf.urls.static import static
+from django.shortcuts import redirect
 
 
 schema_view = get_schema_view(
@@ -39,6 +40,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
+    path('', lambda request: redirect('/app/', permanent=False)),
     path('admin/', admin.site.urls),
     path('app/', include('app.frontend_urls')), # frontend Routen
     path('api/', include('app.urls')),  # API-Routen
